@@ -45,6 +45,10 @@
 </template>
 
 <script lang="ts" setup>
+definePageMeta({
+  middleware: ["auth"],
+});
+
 const product = useProducts();
 const productStore = useProductStore();
 

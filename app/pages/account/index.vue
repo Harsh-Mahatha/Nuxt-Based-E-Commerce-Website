@@ -86,5 +86,7 @@
 <script lang="ts" setup>
 const authStore = useAuthStore();
 
-definePageMeta({});
+definePageMeta({
+  middleware: ["auth"],
+});
 </script>
