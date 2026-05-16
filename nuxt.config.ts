@@ -17,4 +17,12 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  nitro: {
+    storage: {
+      data: {
+        driver: "fs",
+        base: "./.data/kv",
+      },
+    },
+  },
 });

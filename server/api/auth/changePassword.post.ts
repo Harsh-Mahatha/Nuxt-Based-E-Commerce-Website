@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
   const storedPass = await storage.getItem(`auth:password`);
   console.log(storedPass);
 
-  const currentPassword = storedPass || "1234";
+  const currentPassword = String(storedPass ?? "1234");
 
   if (oldPassword !== currentPassword) {
     throw createError({

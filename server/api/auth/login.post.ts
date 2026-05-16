@@ -3,10 +3,12 @@ export default defineEventHandler(async (event) => {
   const { email, password } = body;
 
   const storage = useStorage("data");
-  const storedEmail =
-    (await storage.getItem<string>("auth:email")) ?? "harsh@gmail.com";
-  const storedPassword =
-    (await storage.getItem<string>("auth:password")) ?? "1234";
+  const storedEmail = String(
+    (await storage.getItem("auth:email")) ?? "harsh@gmail.com"
+  );
+  const storedPassword = String(
+    (await storage.getItem("auth:password")) ?? "1234"
+  );
 
   if (email === storedEmail && password === storedPassword) {
     const user = {
